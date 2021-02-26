@@ -2,6 +2,8 @@
 
 ![This is what the homepage looks like.](https://github.com/Rawaa-Al-Kabbani/prisjakt-deals/blob/main/preview/prisjakt-deals.png?raw=true)
 
+Showcase: https://prisjakt-deals.herokuapp.com/
+
 This is a web app that uses the Prisjakt API for finding deals.
 
 It is written in React.js, Material-UI, TypeScript, Node.js, Express, Docker and Jest.

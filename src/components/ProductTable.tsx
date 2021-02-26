@@ -18,6 +18,7 @@ const ProductTable: FunctionComponent<ProductTableProps> = (props) => {
   const sortedProducts = props.products.sort((a, b) => {
     return a.product.name.localeCompare(b.product.name);
   });
+
   return (
     <TableContainer style={{ maxHeight: "90vh" }}>
       <Table aria-label="product table">
@@ -39,12 +40,16 @@ const ProductTable: FunctionComponent<ProductTableProps> = (props) => {
         <TableBody>
           {sortedProducts.map((product) => (
             <TableRow key={product.id}>
-              <TableCell component="th" scope="row">
-                <Avatar
-                  alt="product image"
-                  src={product.product.media.product_images.first["800"]}
-                />
-              </TableCell>
+              {product.product.media.product_images.first === null ? (
+                <TableCell component="th" scope="row"></TableCell>
+              ) : (
+                <TableCell component="th" scope="row">
+                  <Avatar
+                    alt="product image"
+                    src={product.product.media.product_images.first["800"]}
+                  />
+                </TableCell>
+              )}
               <TableCell>{product.product.name}</TableCell>
               <TableCell align="center">
                 {product.price.display.offer}
